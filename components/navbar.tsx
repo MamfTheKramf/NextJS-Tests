@@ -41,8 +41,8 @@ export default function Navbar() {
                 [styles.show]: show,
             })}`} onClick={toggleShow}>
                 <ul className={styles.wide}>
-                    {links.map(link => (
-                        <li>
+                    {links.map((link, i) => (
+                        <li key={i}>
                             <Link href={link.path} className={clsx({
                                 [styles.active]: isActive(link.path, path)
                             })}>
@@ -52,8 +52,8 @@ export default function Navbar() {
                     ))}
                 </ul>
                 <ul className={styles.narrow}>
-                    {links.map(link => (
-                        <li>
+                    {links.map((link, i) => (
+                        <li key={i}>
                             <Link href={link.path} className={clsx({
                                 [styles.active]: isActive(link.path, path)
                             })}>

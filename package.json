@@ -21,6 +21,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "gray-matter": "^4.0.3",
     "sass": "^1.63.6"
   }
 }
