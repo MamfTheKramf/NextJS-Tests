@@ -28,9 +28,18 @@ const links: LinkEntry[] = [
 
 export default function Navbar() {
     const path = useActive();
+
+    const [show, setShow] = useState(false)
+
+    function toggleShow() {
+        setShow(!show);
+    }
+
     return (
         <>
-            <nav className={styles.nav}>
+            <nav className={`${styles.nav} ${clsx({
+                [styles.show]: show,
+            })}`} onClick={toggleShow}>
                 <ul className={styles.wide}>
                     {links.map(link => (
                         <li>
